@@ -20,6 +20,12 @@ This repository documents a self-directed Kaggle project exploring the OTTO Reco
 - Constructed user action sequences ordered by timestamp.
 - Extracted frequent behavior paths and plotted common sequences.
 
+### Day 5 – Item-Level Popularity Features
+- Calculated total clicks, carts, and orders for each item.
+- Created click-to-cart rate (CTR) and click-to-order rate (CVR).
+- Visualized top 20 most clicked items.
+- Saved all item-level stats for future model use.
+
 ## 📂 Structure
 
 - `notebook/`: Contains Day 1–4 Jupyter Notebooks.
