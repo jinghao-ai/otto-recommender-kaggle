@@ -1,4 +1,4 @@
-# OTTO Recommender System – Days 1 to 4
+# OTTO Recommender System – Days 1 to 21
 
 This repository documents a self-directed Kaggle project exploring the OTTO Recommender System dataset.
 
