@@ -1,4 +1,4 @@
-# OTTO Recommender System – Days 1 to 21
+# OTTO Recommender System – Days 1 to 20
 
 This repository documents a self-directed Kaggle project exploring the OTTO Recommender System dataset.
 
@@ -48,7 +48,7 @@ Notebook highlights:
 
 ## 📂 Structure
 
-- `notebook/`: Contains Day 1–4 Jupyter Notebooks.
+- `notebook/`: Contains Day 1–20 Jupyter Notebooks.
 - `visualizations/`: Visual output from matplotlib charts.
 - `README.md`: Project overview and progress.
 
