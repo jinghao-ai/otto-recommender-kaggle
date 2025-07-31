@@ -18,7 +18,7 @@ Notebook highlights:
 
 ## ✅ Completed Days
 
-##📘 Day 1 – Data Loading & Exploration
+## 📘 Day 1 – Data Loading & Exploration
 
 ### 🎯 Goal  
 Load the raw training data and understand its structure.
