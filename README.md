@@ -18,9 +18,19 @@ Notebook highlights:
 
 ## ✅ Completed Days
 
-### Day 1 – Data Loading
-- Loaded and explored OTTO's raw Parquet dataset.
-- Mapped numeric event types to human-readable labels.
+# Day 1 - Data Loading
+
+**Goal:** Load and inspect the raw interaction data from the OTTO recommender system dataset.
+
+## Tasks
+- Load `train.parquet` using `pandas`
+- Display sample rows and check for column names, data types, and null values
+- Understand the meaning of each column (`session`, `aid`, `ts`, `type`)
+
+## Key Concepts
+- DataFrame operations with `pandas`
+- Basic I/O operations and dataset inspection
+
 
 ### Day 2 – Behavior Analysis
 - Analyzed the distribution of clicks, carts, and orders.
