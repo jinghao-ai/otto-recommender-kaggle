@@ -18,63 +18,115 @@ Notebook highlights:
 
 ## ✅ Completed Days
 
-# Day 1 - Data Loading
+##📘 Day 1 – Data Loading & Exploration
 
-**Goal:** Load and inspect the raw interaction data from the OTTO recommender system dataset.
+### 🎯 Goal  
+Load the raw training data and understand its structure.
 
-## Tasks
-- Load `train.parquet` using `pandas`
-- Display sample rows and check for column names, data types, and null values
-- Understand the meaning of each column (`session`, `aid`, `ts`, `type`)
+### 🧩 Workflow  
+- Load `train.parquet` into a DataFrame  
+- Check basic columns: `session`, `aid`, `ts`, `type`  
+- Examine event distribution and timestamp ranges  
 
-## Key Concepts
-- DataFrame operations with `pandas`
-- Basic I/O operations and dataset inspection
+### 📚 Knowledge Points  
+- Using `pd.read_parquet`  
+- Understanding event logs in recommendation datasets  
+- Datetime conversion and `value_counts`
 
+## 📘 Day 2 – Session Behavior Analysis
 
-### Day 2 – Behavior Analysis
-- Analyzed the distribution of clicks, carts, and orders.
-- Visualized behavior counts and session length distributions.
+### 🎯 Goal  
+Analyze user behaviors at the session level.
 
-### Day 3 – Conversion Funnel
-- Built a pivot table to summarize session-level behavior.
-- Created boolean flags and visualized the user behavior funnel.
+### 🧩 Workflow  
+- Extract session duration  
+- Count number of actions per session  
+- Explore interaction frequency by action type  
 
-### Day 4 – Sequential Pattern Mining
-- Constructed user action sequences ordered by timestamp.
-- Extracted frequent behavior paths and plotted common sequences.
+### 📚 Knowledge Points  
+- Grouping and aggregating sessions  
+- Session-based recommendation metrics  
+- Action type segmentation
 
-### Day 5 – Item-Level Popularity Features
-- Calculated total clicks, carts, and orders for each item.
-- Created click-to-cart rate (CTR) and click-to-order rate (CVR).
-- Visualized top 20 most clicked items.
-- Saved all item-level stats for future model use.
+## 📘 Day 3 – Conversion Funnel Analysis
 
-### Day 6 – Session-Level User Features
-- Calculated the number of clicks, carts, and orders per session.
-- Computed click ratio and session length for each user.
-- Extracted active time period features (min, max, avg hour).
-- Saved all session-level features for future training steps.
+### 🎯 Goal  
+Explore the behavior funnel: click → cart → order.
+
+### 🧩 Workflow  
+- Compute counts and rates for clicks, carts, and orders  
+- Analyze conversion ratios  
+- Plot funnel chart for behavior conversion  
+
+### 📚 Knowledge Points  
+- Conversion rate computation  
+- `groupby()` with multiple filters  
+- Funnel chart design principles
+
+## 📘 Day 4 – Sequential Pattern & Action Time Gap
+
+### 🎯 Goal  
+Analyze time intervals between actions and sequential behavior patterns.
+
+### 🧩 Workflow  
+- Sort actions by timestamp  
+- Compute time deltas within each session  
+- Analyze most common action sequences  
+
+### 📚 Knowledge Points  
+- `groupby().diff()` for time gaps  
+- Action sequence frequency analysis  
+- Temporal behavior understanding
+
+## 📘 Day 5 – Item-Level Statistics
+
+### 🎯 Goal  
+Understand item popularity and engagement by event type.
+
+### 🧩 Workflow  
+- Compute total clicks, carts, orders per item  
+- Rank items by interaction volume  
+- Create visualizations of top items  
+
+### 📚 Knowledge Points  
+- Multi-index aggregation  
+- Sorting and ranking aids  
+- Feature engineering for items
+
+## 📘 Day 6 – Session-Level Feature Engineering
+
+### 🎯 Goal  
+Extract session-level statistical features.
+
+### 🧩 Workflow  
+- Count unique items per session  
+- Session duration and average time per event  
+- Item diversity and entropy metrics  
+
+### 📚 Knowledge Points  
+- Grouping by session for feature extraction  
+- Use of `nunique`, `mean`, and entropy  
+- Session-based modeling prep
 
 ## 📘 Day 7 – Candidate Generation: Popularity-Based Recall
 
-### ✅ Goal
-This notebook implements a simple candidate recall method based on item popularity.
-I use the most popular items (based on clicks, carts, and orders) and assign them to each session as candidate items.
+### 🎯 Goal
 
-### 🔍 Steps
+Generate session-item candidate pairs based on item popularity (clicks, carts, orders). This is a simple baseline recall strategy.
 
-1. Load original session event data
-2. Map action types to human-readable strings
-3. Aggregate item popularity by action type
-4. Construct candidate session × item pairs
-5. Save results for future modeling
+### 🧩 Workflow
 
-### 🧠 Knowledge Points
+1. Load training dataset (`train.parquet`)
+2. Map action types (0/1/2) to strings: `clicks`, `carts`, `orders`
+3. Aggregate most frequent items by action type
+4. Create candidate pairs by combining each session with top-N popular items
+5. Save as `popularity_candidates.parquet`
 
-- Data aggregation using `groupby` and `size`
-- Using `np.repeat` and `np.tile` to generate matrix-style candidate data
-- Understanding two-stage recommendation systems
+### 📚 Knowledge Points
+
+- `groupby().size()` for aggregation
+- Use of `np.repeat` and `np.tile` for matrix construction
+- Understanding candidate recall strategies in recommendation systems
 
 ## 📂 Structure
 
