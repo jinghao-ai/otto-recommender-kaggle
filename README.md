@@ -46,6 +46,26 @@ Notebook highlights:
 - Extracted active time period features (min, max, avg hour).
 - Saved all session-level features for future training steps.
 
+## 📘 Day 7 – Candidate Generation: Popularity-Based Recall
+
+### ✅ Goal
+This notebook implements a simple candidate recall method based on item popularity.
+I use the most popular items (based on clicks, carts, and orders) and assign them to each session as candidate items.
+
+### 🔍 Steps
+
+1. Load original session event data
+2. Map action types to human-readable strings
+3. Aggregate item popularity by action type
+4. Construct candidate session × item pairs
+5. Save results for future modeling
+
+### 🧠 Knowledge Points
+
+- Data aggregation using `groupby` and `size`
+- Using `np.repeat` and `np.tile` to generate matrix-style candidate data
+- Understanding two-stage recommendation systems
+
 ## 📂 Structure
 
 - `notebook/`: Contains Day 1–20 Jupyter Notebooks.
