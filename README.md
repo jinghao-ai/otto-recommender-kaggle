@@ -128,6 +128,22 @@ Generate session-item candidate pairs based on item popularity (clicks, carts, o
 - Use of `np.repeat` and `np.tile` for matrix construction
 - Understanding candidate recall strategies in recommendation systems
 
+## 📘 Day 8 – Candidate Generation: Co-visitation Matrix
+
+### 🎯 Goal  
+Build a candidate recall strategy based on co-visitation. Items that appear together in sessions are likely to be relevant.
+
+### 🧩 Workflow  
+- Load training session logs  
+- Build item-to-item co-visitation matrix from user sessions  
+- Extract top co-visited items as candidate pairs  
+- Save results for next-step recall/modeling
+
+### 📚 Knowledge Points  
+- Nested dictionary and defaultdict usage  
+- Pairwise item interactions in collaborative filtering  
+- Candidate generation using item-item relationships
+
 ## 📂 Structure
 
 - `notebook/`: Contains Day 1–20 Jupyter Notebooks.
