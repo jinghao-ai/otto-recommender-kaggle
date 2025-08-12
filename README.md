@@ -144,6 +144,28 @@ Build a candidate recall strategy based on co-visitation. Items that appear toge
 - Pairwise item interactions in collaborative filtering  
 - Candidate generation using item-item relationships
 
+## 📘 Day 9: Session-level Aggregate Features
+
+### 🎯 Goal  
+This notebook computes session-level aggregate features for the OTTO dataset.  
+These features include:
+- Total interactions per session
+- Unique items per session
+- Average interaction time difference per session
+
+### 🧩 Workflow  
+1. Load train and test parquet files.
+2. Combine datasets to ensure consistent statistics.
+3. Compute total interactions per session.
+4. Compute unique items per session.
+5. Compute average time difference per session.
+6. Merge features back to train and test datasets.
+
+### 📚 Knowledge Points  
+- `train_day9.parquet`
+- `test_day9.parquet`
+
+
 ## 📂 Structure
 
 - `notebook/`: Contains Day 1–20 Jupyter Notebooks.
